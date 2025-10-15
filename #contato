@@ -20,21 +20,27 @@
       </ul>
     </nav>
   </header>
-<div class="content">
-            <h1>entre em contato</h1>
-            <p>tem alguma duvida, sugestao ou reclamação? envie a sua mensagem</p>
+<div class="section">
 
-            <form action="#" method="post">
-                <label>nome:</label><br>
-                <input type="text" name="nome"><br><br>
+<h1>endereço:</h1>
+<h3>Rua das Palmeiras, nº 245 – Bairro São Mateus Juiz de Fora – MG, CEP: 36025-110</h3>
 
-                <label>email:</label><br>
-                <input type="email" name="email"><br><br>
+<h1>Telefones:</h1>
+<h3>(32) 3214-7788 (32) 
+9 8812-3344 (WhatsApp)</h3>
 
-                <label>mensagem:</label><br>
-                <textarea name="mensagem" rows="4" cols="40"></textarea><br><br>
+<h1>E-mail:</h1>
+<h3>contato@fomedq.com.br</h3>
 
-                <button type="submit">enviar</button>
-            </form> 
-        </div>
+<h1>Site:</h1>
+<h3>www.fomedq.com.br</h3>
+
+<h1>Horário de funcionamento:</h1>
+<h3>Segunda a Sábado – 10h às 02h 
+Domingos e feriados – 11h às 20h</h3>
+
+<h1>Redes sociais:</h1>
+<h3>Instagram: @fome_dq 
+Facebook: facebook.com/fomedq</h3>
+</div>
 </body>
