@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - Pizzaria Delícia</title>
+    <style>
+        /* Estilos gerais com cores principais: #c0392b e #f1c40f */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #c0392b;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        header nav ul li {
+            margin: 0 10px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header nav ul li a:hover,
+        header nav ul li a:focus {
+            background-color: #f1c40f;
+            color: #c0392b;
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1920x600?text=Pizzaria+Delícia+Banner'); /* Substitua por uma imagem real */
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative; /* Para overlay se necessário */
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Overlay para melhor legibilidade */
+        }
+
+        .hero-content {
+            position: relative; /* Para sobrepor o overlay */
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            background-color: #c0392b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #f1c40f;
+            color: #c0392b;
+        }
+
+        .featured-section {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .featured-section h3 {
+            color: #c0392b;
+            margin-bottom: 20px;
+        }
+
+        .featured-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .featured-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .featured-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .featured-item h4 {
+            margin: 10px;
+            font-size: 20px;
+        }
+
+        .featured-item p {
+            margin: 0 10px 10px;
+            color: #666;
+        }
+
+        footer {
+            background-color: #c0392b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            header nav ul {
+                flex-direction: column;
+            }
+            header nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pizzaria Delícia</h1>
+        <p>Peça agora e receba em casa!</p>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li> <!-- Link para a página de cardápio -->
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Bem-vindo à Pizzaria Delícia!</h2>
+                <p>As melhores pizzas da cidade, entregas rápidas e sabor inesquecível.</p>
+                <button onclick="window.location.href='cardapio.html'">Ver Cardápio</button>
+                <button onclick="window.location.href='pedidos.html'">Fazer Pedido</button>
+            </div>
+        </section>
+
+        <section class="featured-section">
+            <h3>Nossos Destaques</h3>
+            <div class="featured-items">
+                <div class="featured-item">
+                    <img src="https://via.placeholder.com/250x200?text=Pizza+Margherita" alt="Pizza Margherita">
+                    <h4>Pizza Margherita</h4>
+                    <p>Clássica e irresistível, a partir de R$ 35,00.</p>
+                </div>
+                <div class="featured-item">
+                    <img src="https://via.placeholder.com/250x200?text=Pizza+Pepperoni" alt="Pizza Pepperoni">
+                    <h4>Pizza Pepperoni</h4>
+                    <p>Com pepperoni crocante, a partir de R$ 40,00.</p>
+                </div>
+                <div class="featured-item">
+                    <img src="https://via.placeholder.com/250x200?text=Pizza+Quatro+Queijos" alt="Pizza Quatro Queijos">
+                    <h4>Pizza Quatro Queijos</h4>
+                    <p>Queijos selecionados, a partir de R$ 45,00.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="featured-section" style="background-color: #f1c40f; color: #333; padding: 40px 20px;">
+            <h3>Sobre Nós</h3>
+            <p>A Pizzaria Delícia oferece pizzas artesanais feitas com ingredientes frescos e de qualidade. Venha experimentar o melhor da culinária italiana no conforto da sua casa!</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Pizzaria Delícia. Todos os direitos reservados.</p>
+        <p>Contato: email@example.com | Telefone: (11) 1234-5678</p>
+    </footer>
+</body>
+</html>
