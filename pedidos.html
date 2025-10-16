@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos - Pizzaria Delícia</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #c0392b;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        header nav ul li {
+            margin: 0 10px;
+        }
+
+        header nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        header nav ul li a:hover,
+        header nav ul li a:focus {
+            background-color: #f1c40f;
+            color: #c0392b;
+        }
+
+        .hero {
+            background-image: url('https://via.placeholder.com/1920x600?text=Faça+seu+Pedido+na+Pizzaria+Delícia');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .hero button {
+            background-color: #c0392b;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 18px;
+            transition: background-color 0.3s;
+        }
+
+        .hero button:hover {
+            background-color: #f1c40f;
+            color: #c0392b;
+        }
+
+        .cart-section {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: white;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .cart-section h3 {
+            color: #c0392b;
+        }
+
+        .order-options {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #f1c40f;
+            color: #333;
+        }
+
+        footer {
+            background-color: #c0392b;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h2 {
+                font-size: 32px;
+            }
+            .hero p {
+                font-size: 18px;
+            }
+            header nav ul {
+                flex-direction: column;
+            }
+            header nav ul li {
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pizzaria Delícia</h1>
+        <p>Peça agora e receba em casa!</p>
+        <nav>
+            <ul>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+                <li><a href="pedidos.html">Pedidos</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Seus Pedidos na Pizzaria Delícia!</h2>
+                <p>Veja os itens selecionados, o valor total e escolha a forma de entrega.</p>
+                <button onclick="window.location.href='cardapio.html'">Adicionar Mais Itens</button>
+            </div>
+        </section>
+
+        <section class="cart-section">
+            <h3>Seu Carrinho</h3>
+            <div id="cart-items"></div>
+            <p>Valor Total (sem frete): <span id="subtotal-price">R$ 0,00</span></p>
+            <p>Frete: <span id="freight-price">R$ 0,00</span></p>
+            <p>Valor Total: <span id="total-price">R$ 0,00</span></p>
+        </section>
+
+        <section class="order-options">
+            <h3>Opções de Entrega</h3>
+            <label><input type="radio" name="delivery" value="retirada" onclick="toggleDeliveryOptions()"> Retirada na Loja</label><br>
+            <label><input type="radio" name="delivery" value="entrega" onclick="toggleDeliveryOptions()"> Entrega</label><br>
+            <div id="delivery-fields" style="display: none; margin-top: 10px;">
+                <input type="text" id="cep-input" placeholder="Digite seu CEP (ex: 01000-000)" style="padding: 10px; width: 80%;">
+                <button onclick="calculateFreight()">Calcular Frete</button>
+            </div>
+            <button onclick="confirmOrder()" style="margin-top: 20px;">Confirmar Pedido</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Pizzaria Delícia. Todos os direitos reservados.</p>
+        <p>Contato: email@example.com | Telefone: (11) 1234-5678</p>
+    </footer>
+
+    <script>
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let subtotalPrice = 0;
+        let freightPrice = 0;
+
+        function updateCartDisplay() {
+            const cartItemsDiv = document.getElementById('cart-items');
+            cartItemsDiv.innerHTML = '';
+            subtotalPrice = 0;
+            cart.forEach((item, index) => {
+                const itemElement = document.createElement('p');
+                itemElement.textContent = `${item.name} - R$ ${item.price.toFixed(2)} <button onclick="removeFromCart(${index})">Remover</button>`;
+                cartItemsDiv.appendChild(itemElement);
+                subtotalPrice += item.price;
+            });
+            document.getElementById('subtotal-price').textContent = `R$ ${subtotalPrice.toFixed(2)}`;
+            updateTotalPrice();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            localStorage.setItem('cart', JSON.stringify(cart)); 
+            updateCartDisplay();
+        }
+
+        function toggleDeliveryOptions() {
+            const deliveryFields = document.getElementById('delivery-fields');
+            const deliveryOption = document.querySelector('input[name="delivery"]:checked').value;
+            if (deliveryOption === 'entrega') {
+                deliveryFields.style.display = 'block';
+                freightPrice = 0; 
+                document.getElementById('freight-price').textContent = `R$ ${freightPrice.toFixed(2)}`;
+                updateTotalPrice();
+            } else {
+                deliveryFields.style.display = 'none';
+                freightPrice = 0;
+                document.getElementById('freight-price').textContent = `R$ ${freightPrice.toFixed(2)}`;
+                updateTotalPrice();
+            }
+        }
+
+        function calculateFreight() {
+            const cep = document.getElementById('cep-input').value.replace('-', '').trim(); 
+            if (cep.length === 8 && !isNaN(cep)) {
+                let freight = 0;
+                const firstTwoDigits = parseInt(cep.substring(0, 2));
+                if (firstTwoDigits >= 1 && firstTwoDigits <= 9) freight = 10.00; 
+                else if (firstTwoDigits >= 10 && firstTwoDigits <= 99) freight = 15.00;  
+                else freight = 20.00; 
+                freightPrice = freight;
+                document.getElementById('freight-price').textContent = `R$ ${freightPrice.toFixed(2)}`;
+                updateTotalPrice();
+            } else {
+                alert('CEP inválido. Use o formato XXXXX-XXX.');
+            }
+        }
+
+        function updateTotalPrice() {
+            const totalPrice = subtotalPrice + freightPrice;
+            document.getElementById('total-price').textContent = `R$ ${totalPrice.toFixed(2)}`;
+        }
+
+        function confirmOrder() {
+            alert('Pedido confirmado! Total: R$ ' + (subtotalPrice + freightPrice).toFixed(2));
+            localStorage.removeItem('cart');  
+            window.location.href = 'home.html';
+        }
+
+        window.onload = updateCartDisplay;
+    </script>
+</body>
+</html>
