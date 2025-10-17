@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pizzaria Delícia - Home</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>Pizzaria Delícia</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#">Início</a></li> 
+        <li><a href="#sabores">Sabores</a></li>
+        <li><a href="#promocoes">Promoções</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+<div class="content"> 
+                    <h1>Entrar</h1>
+                    <p>faça login para acessar seu perfil e acompanhar seus pedidos.</p>
+                    <form action="${pageContext.request.contextPath}/LoginServlet" method="post" class="form-login">
+                        <label for="nome">nome: </label>
+                        <input type="text" id="nome" name="nome" placeholder="digite seu nome" required>
+
+                        <label for="email">e-mail: </label>
+                        <input type="email" id="email" name="email" placeholder="digite seu email" required>
+
+                        <label for="senha">senha: </label>
+                        <input type="password" id="senha" name="senha" placeholder="digite seu senha" required>
+
+                        <button type="submit" class="btn-enviar">
+                            <i class="bi bi-door-open-fill"></i>
+                            entrar                    
+                        </button>
+                    </form>
+                    <div class="link-cadastro">
+                        <p>não tem conta?</p>
+                        <a href="${pageContext.request.contextPath}/jsp/cadastro" class="btn-cadastrar">
+                            <i class="bi bi-person-plus-fill"></i> cadastre-se
+                        </a>
+                    </div>
+                </div>
+            </div>
+</body>
+</html>
