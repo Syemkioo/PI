@@ -216,46 +216,116 @@
             <h3>Nossos Itens do Cardápio</h3>
             <div class="menu-items">
                 <div class="menu-item">
-                    <img src="https://via.placeholder.com/250x200?text=Pizza+Margherita" alt="Pizza Margherita">
-                    <h4>Pizza Margherita</h4>
-                    <p>Clássica e irresistível, R$ 15,00.</p>
-                    <button onclick="addToCart('Pizza Margherita', 15.00)">Adicionar ao Carrinho</button>
+                    <form action="${pageContex.request.contexPath}/carrinho" method="post">
+                        <img src="https://via.placeholder.com/250x200?text=Pizza+Margherita" alt="Pizza Margherita">
+                        <h3>Pizza Margherita</h3>
+                        <p>Clássica e irresistível</p>
+                        <span class="price">R$15,00</span>
+                        <input type="hidden" name="id" value="1"> 
+                        <input type="hidden" name="nome" value="Pizza Margherita"> 
+                        <input type="hidden" name="preco" value="15.00"> 
+                        <label>quantidade</label>
+                        <input type="number" name="quantidade" value="1" min="1" style="width:60px;">
+                        <button type="submit" class="btn btn-success mt-2">
+                            <i class="bi bi-cart-plus"></i>adicionar
+                        </button>
+                    </form>                    
                 </div>
                 <div class="menu-item">
-                    <img src="https://via.placeholder.com/250x200?text=Pizza+Pepperoni" alt="Pizza Pepperoni">
-                    <h4>Pizza Pepperoni</h4>
-                    <p>Com pepperoni crocante, R$ 15,00.</p>
-                    <button onclick="addToCart('Pizza Pepperoni', 15.00)">Adicionar ao Carrinho</button>
+                    <form action="${pageContex.request.contexPath}/carrinho" method="post">
+                        <img src="https://via.placeholder.com/250x200?text=Pizza+Pepperoni" alt="Pizza Pepperoni">
+                        <h3>Pizza Pepperoni</h3>
+                        <p>Com pepperoni crocante</p>
+                        <span class="price">R$15,00</span>
+                        <input type="hidden" name="id" value="1"> 
+                        <input type="hidden" name="nome" value="Pizza Pepperoni"> 
+                        <input type="hidden" name="preco" value="15.00"> 
+                        <label>quantidade</label>
+                        <input type="number" name="quantidade" value="1" min="1" style="width:60px;">
+                        <button type="submit" class="btn btn-success mt-2">
+                            <i class="bi bi-cart-plus"></i>adicionar
+                        </button>
+                    </form>  
                 </div>
                 <div class="menu-item">
-                    <img src="https://via.placeholder.com/250x200?text=Pizza+Quatro+Queijos" alt="Pizza Quatro Queijos">
-                    <h4>Pizza Quatro Queijos</h4>
-                    <p>Queijos selecionados, R$ 25,00.</p>
-                    <button onclick="addToCart('Pizza Quatro Queijos', 25.00)">Adicionar ao Carrinho</button>
+                    <form action="${pageContex.request.contexPath}/carrinho" method="post">
+                        <img src="https://via.placeholder.com/250x200?text=Pizza+Quatro+Queijos" alt="Pizza Quatro Queijos">
+                        <h3>Pizza Quatro Queijos</h3>
+                        <p>Queijos selecionados</p>
+                        <span class="price">R$25,00</span>
+                        <input type="hidden" name="id" value="1"> 
+                        <input type="hidden" name="nome" value="Pizza Quatro Queijos"> 
+                        <input type="hidden" name="preco" value="25.00"> 
+                        <label>quantidade</label>
+                        <input type="number" name="quantidade" value="1" min="1" style="width:60px;">
+                        <button type="submit" class="btn btn-success mt-2">
+                            <i class="bi bi-cart-plus"></i>adicionar
+                        </button>
+                    </form>  
                 </div>
                 <div class="menu-item">
-                    <img src="https://via.placeholder.com/250x200?text=Pizza+Portuguesa" alt="Pizza Portuguesa">
-                    <h4>Pizza Portuguesa</h4>
-                    <p>Clássica brasileira, R$ 25,00.</p>
-                    <button onclick="addToCart('Pizza Portuguesa', 25.00)">Adicionar ao Carrinho</button>
+                    <form action="${pageContex.request.contexPath}/carrinho" method="post">
+                        <img src="https://via.placeholder.com/250x200?text=Pizza+Portuguesa" alt="Pizza Portuguesa">
+                        <h3>Pizza Portuguesa</h3>
+                        <p>Clássica brasileira</p>
+                        <span class="price">R$25,00</span>
+                        <input type="hidden" name="id" value="1"> 
+                        <input type="hidden" name="nome" value="Portuguesa"> 
+                        <input type="hidden" name="preco" value="25.00"> 
+                        <label>quantidade</label>
+                        <input type="number" name="quantidade" value="1" min="1" style="width:60px;">
+                        <button type="submit" class="btn btn-success mt-2">
+                            <i class="bi bi-cart-plus"></i>adicionar
+                        </button>
+                    </form>  
                 </div>
                 <div class="menu-item">
-                    <img src="https://via.placeholder.com/250x200?text=Pizza+bacon+cheddar" alt="Pizza bacon com cheddar">
-                    <h4>Pizza bacon com cheddar</h4>
-                    <p>bacon e cheddar delicioso, R$ 25,00.</p>
-                    <button onclick="addToCart('Pizza bacon com cheddar', 25.00)">Adicionar ao Carrinho</button>
+                    <form action="${pageContex.request.contexPath}/carrinho" method="post">
+                        <img src="https://via.placeholder.com/250x200?text=Pizza+bacon+cheddar" alt="Pizza bacon com cheddar">
+                        <h3>Pizza bacon com cheddar</h3>
+                        <p>bacon e cheddar delicioso</p>
+                        <span class="price">R$15,00</span>
+                        <input type="hidden" name="id" value="1"> 
+                        <input type="hidden" name="nome" value="Pizza bacon com cheddar"> 
+                        <input type="hidden" name="preco" value="15.00"> 
+                        <label>quantidade</label>
+                        <input type="number" name="quantidade" value="1" min="1" style="width:60px;">
+                        <button type="submit" class="btn btn-success mt-2">
+                            <i class="bi bi-cart-plus"></i>adicionar
+                        </button>
+                    </form>  
                 </div>
                 <div class="menu-item">
-                    <img src="https://via.placeholder.com/250x200?text=Pizza+Catuperoni" alt="Pizza Catuperoni">
-                    <h4>Pizza Catuperoni</h4>
-                    <p>peperoni e catupiry, R$ 15,00.</p>
-                    <button onclick="addToCart('Pizza Catuperoni', 15.00)">Adicionar ao Carrinho</button>
+                    <form action="${pageContex.request.contexPath}/carrinho" method="post">
+                        <img src="https://via.placeholder.com/250x200?text=Pizza+Catuperoni" alt="Pizza Catuperoni">
+                        <h3>Pizza Catuperoni</h3>
+                        <p>peperoni e catupiry</p>
+                        <span class="price">R$15,00</span>
+                        <input type="hidden" name="id" value="1"> 
+                        <input type="hidden" name="nome" value="Pizza Catuperoni"> 
+                        <input type="hidden" name="preco" value="15.00"> 
+                        <label>quantidade</label>
+                        <input type="number" name="quantidade" value="1" min="1" style="width:60px;">
+                        <button type="submit" class="btn btn-success mt-2">
+                            <i class="bi bi-cart-plus"></i>adicionar
+                        </button>
+                    </form> 
                 </div>
                 <div class="menu-item">
-                    <img src="https://via.placeholder.com/250x200?text=Pizza+Frango+catupiry" alt="Pizza Frango catupiry">
-                    <h4>Pizza Frango catupiry</h4>
-                    <p>sabor classico brasileiro, R$ 15,00.</p>
-                    <button onclick="addToCart('Pizza Frango catupiry', 15.00)">Adicionar ao Carrinho</button>
+                    <form action="${pageContex.request.contexPath}/carrinho" method="post">
+                        <img src="https://via.placeholder.com/250x200?text=Pizza+Frango+catupiry" alt="Pizza Frango catupiry">
+                        <h3>Pizza Frango catupiry</h3>
+                        <p>sabor classico brasileiro</p>
+                        <span class="price">R$15,00</span>
+                        <input type="hidden" name="id" value="1"> 
+                        <input type="hidden" name="nome" value="Pizza Frango catupiry"> 
+                        <input type="hidden" name="preco" value="15.00"> 
+                        <label>quantidade</label>
+                        <input type="number" name="quantidade" value="1" min="1" style="width:60px;">
+                        <button type="submit" class="btn btn-success mt-2">
+                            <i class="bi bi-cart-plus"></i>adicionar
+                        </button>
+                    </form>
                 </div>
                 <!-- Adicione mais itens se necessário -->
             </div>
